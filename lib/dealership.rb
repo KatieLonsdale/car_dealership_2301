@@ -32,4 +32,11 @@ class Dealership
     end
     total_value_of_inventory
   end
+
+  def details
+    dealership_details = {}
+    dealership_details["total_value"] = total_value
+    dealership_details["address"] = @address
+    dealership_details
+  end
 end
