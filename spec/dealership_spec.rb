@@ -30,9 +30,11 @@ RSpec.describe Dealership do
     end
   end
 
-  # describe '#inventory_count' do
-  #   it 'returns number of cards in inventory' do
+  describe '#inventory_count' do
+    it 'returns number of cards in inventory' do
+      dealership = Dealership.new("Acme Auto", "123 Main Street")
 
-  #   end
-  # end
+      expect(dealership.inventory_count).to be 0
+    end
+  end
 end
