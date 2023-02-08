@@ -14,4 +14,8 @@ class Dealership
   def add_car(car)
     @inventory.push(car)
   end
+
+  def has_inventory?
+    self.inventory_count > 0 ? true : false
+  end
 end
