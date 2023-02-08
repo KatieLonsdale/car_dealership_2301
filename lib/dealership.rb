@@ -24,4 +24,12 @@ class Dealership
       car.make == make
     end
   end
+
+  def total_value
+    total_value_of_inventory = 0
+    @inventory.each do |car|
+      total_value_of_inventory += car.total_cost
+    end
+    total_value_of_inventory
+  end
 end
