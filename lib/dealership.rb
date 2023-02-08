@@ -39,4 +39,29 @@ class Dealership
     dealership_details["address"] = @address
     dealership_details
   end
+
+  def average_price_of_car
+    average_price = 0
+    @inventory.each do |car|
+      average_price += car.total_cost
+    end
+    average_price /= inventory_count
+    formatted_average_price = ''
+    count = 0
+    average_price.to_s.reverse.each_char do |char|
+      if count == 3
+        formatted_average_price.prepend(',')
+        formatted_average_price.prepend(char)
+        count = 0
+      else 
+        formatted_average_price.prepend(char)
+        count += 1
+      end
+    end
+    formatted_average_price
+  end
+
+  # def cars_sorted_by_price
+  #   @inventory.sort_by{|car| car.total_cost}
+  # end
 end
