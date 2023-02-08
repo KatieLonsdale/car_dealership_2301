@@ -61,7 +61,20 @@ class Dealership
     formatted_average_price
   end
 
-  # def cars_sorted_by_price
-  #   @inventory.sort_by{|car| car.total_cost}
-  # end
+  def cars_sorted_by_price
+    @inventory.sort_by{|car| car.total_cost}
+  end
+
+  def inventory_hash
+    dealership_inventory = {}
+    @inventory.each do |car|
+      if dealership_inventory.has_key?(car.make) == true
+        dealership_inventory[car.make].push(car)
+      else
+        dealership_inventory[car.make] = []
+        dealership_inventory[car.make].push(car)
+      end
+    end
+    dealership_inventory
+  end
 end
