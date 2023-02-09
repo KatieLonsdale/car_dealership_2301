@@ -36,7 +36,7 @@ RSpec.describe Dealership do
       car_1 = Car.new("Ford Mustang", 1500, 36)
       car_2 = Car.new("Toyota Prius", 1000, 48)
 
-      expect(dealership.inventory_count).to be 0
+      expect(dealership.inventory_count).to eq 0
 
       dealership.add_car(car_1)
       dealership.add_car(car_2)
